@@ -1,0 +1,14 @@
+C:\Users\Welcome\Documents\MyCalculator\bin\Debug\net9.0-windows\MyCalculator.exe
+C:\Users\Welcome\Documents\MyCalculator\bin\Debug\net9.0-windows\MyCalculator.deps.json
+C:\Users\Welcome\Documents\MyCalculator\bin\Debug\net9.0-windows\MyCalculator.runtimeconfig.json
+C:\Users\Welcome\Documents\MyCalculator\bin\Debug\net9.0-windows\MyCalculator.dll
+C:\Users\Welcome\Documents\MyCalculator\bin\Debug\net9.0-windows\MyCalculator.pdb
+C:\Users\Welcome\Documents\MyCalculator\obj\Debug\net9.0-windows\MyCalculator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Welcome\Documents\MyCalculator\obj\Debug\net9.0-windows\MyCalculator.AssemblyInfoInputs.cache
+C:\Users\Welcome\Documents\MyCalculator\obj\Debug\net9.0-windows\MyCalculator.AssemblyInfo.cs
+C:\Users\Welcome\Documents\MyCalculator\obj\Debug\net9.0-windows\MyCalculator.csproj.CoreCompileInputs.cache
+C:\Users\Welcome\Documents\MyCalculator\obj\Debug\net9.0-windows\MyCalculator.dll
+C:\Users\Welcome\Documents\MyCalculator\obj\Debug\net9.0-windows\refint\MyCalculator.dll
+C:\Users\Welcome\Documents\MyCalculator\obj\Debug\net9.0-windows\MyCalculator.pdb
+C:\Users\Welcome\Documents\MyCalculator\obj\Debug\net9.0-windows\MyCalculator.genruntimeconfig.cache
+C:\Users\Welcome\Documents\MyCalculator\obj\Debug\net9.0-windows\ref\MyCalculator.dll
