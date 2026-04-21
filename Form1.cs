@@ -3,13 +3,52 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Drawing;
 namespace MyCalculator;
-
+public enum ButtonType
+{
+    Number,
+    Operator,
+    Function,
+    Equal
+}
 public partial class Form1 : Form
 {
     private double result = 0;
     private string operation = "";
     private TextBox txtDisplay;
     private bool isPerformed = false;
+
+    private void applyModernButtonStyle(Button btn, ButtonType type)
+    {
+        btn.FlatStyle = FlatStyle.Flat;
+        btn.FlatAppearance.BorderSize = 0;
+        btn.Font = new Font("Segoe UI", 14, FontStyle.Bold, GraphicsUnit.Point);
+        btn.Cursor = Cursors.Hand;//Chuyển con trỏ chuột thành hình bản tay
+
+        switch (type)
+        {
+           case ButtonType.Number:
+                btn.BackColor = Color.White;//Màu nền
+                btn.ForeColor = Color.Black;//Màu chữ
+                break;
+            case ButtonType.Operator:
+                btn.BackColor = Color.FromArgb(230, 230, 230);
+                btn.ForeColor = Color.FromArgb(0, 120, 215);
+                break;
+            case ButtonType.Function:
+                btn.BackColor = Color.FromArgb(255, 185, 0);
+                btn.ForeColor = Color.White;
+                btn.Font = new Font("Segoe UI", 12, FontStyle.Bold, GraphicsUnit.Point);
+                break;
+            case ButtonType.Equal:
+                btn.BackColor = Color.FromArgb(0, 120, 215);
+                btn.ForeColor = Color.White;
+                btn.Font = new Font("Segoe UI", 16, FontStyle.Bold, GraphicsUnit.Point);
+                break;
+
+
+
+        }
+    }
     public void equalClick(object? sender, EventArgs e)
     {
         
@@ -68,6 +107,7 @@ public partial class Form1 : Form
     }
     public void CreateButton(string text, int x, int y, EventHandler onclick)
     {
+
         Button btn = new Button
         {
             Text = text,
@@ -77,6 +117,13 @@ public partial class Form1 : Form
             FlatStyle = FlatStyle.Flat,
             Font = new Font("Segoe UI", 12, FontStyle.Bold, GraphicsUnit.Point)
         };
+        applyModernButtonStyle(btn, text switch
+        {
+            "+" or "-" or "*" or "/" => ButtonType.Operator,
+            "AC" or "DEL" or "ANS" => ButtonType.Function,
+            "=" => ButtonType.Equal,
+            _ => ButtonType.Number
+        });
         this.Controls.Add(btn);
         btn.Click += onclick;
     }
@@ -115,6 +162,7 @@ public partial class Form1 : Form
             int x = 40 + (i % 3) * 80;
             int y = 120 + (i / 3) * 50;
             CreateButton(i.ToString(), x, y, numberClick);
+            
 
         }
         CreateButton("+", 280, 120, operatorClick);
@@ -126,7 +174,7 @@ public partial class Form1 : Form
         //Nút delete để xóa
         CreateButton("DEL", 40, 320, (s, e) =>
         {
-            txtDisplay.Text = "0";
+            txtDisplay.Text = "";
             result = 0;
             operation = "";
             isPerformed = false;
